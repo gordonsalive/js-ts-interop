@@ -1,0 +1,30 @@
+{
+    "extends": [
+      "airbnb"
+    ],
+    "env": {
+      "node": true,
+      "browser": true,
+      "jest": true,
+      "es6": true
+    },
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/__tests__/**/*.js",
+            "**/__mocks__/**/*.js"
+          ]
+        }
+      ],
+      "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+      "no-param-reassign": ["error", { "props": false }],
+      "linebreak-style": ["off", "unix"],
+      "indent": ["warn", 4],
+      "react/jsx-indent": ["warn", 4],
+      "comma-dangle": ["warn", "only-multiline"],
+      "no-trailing-spaces": ["error", { "skipBlankLines": true }]
+    }
+}
+  
