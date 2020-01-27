@@ -9,4 +9,4 @@ const SayHowdy = (): React.ReactElement => (
     </h2>
 );
 
-export { SayHello as default };
+export { SayHowdy as default };
