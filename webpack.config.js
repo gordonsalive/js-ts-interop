@@ -39,10 +39,19 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 exclude: /node_modules/,
                 use: [
-                    { loader: 'babel-loader' },
+                    /* { loader: 'babel-loader' }, can let ts compiler do all the work for ts files */
                     { loader: 'ts-loader' }
                 ]
             },
+            // {
+            //     for the sake of this proto, it doesn't look like we need babel at all!
+            //     test: /\.js(x?)$/,
+            //     include: path.resolve(__dirname, 'src'),
+            //     exclude: /node_modules/,
+            //     use: [
+            //         { loader: 'babel-loader' } 
+            //     ]
+            // },
             // {
             //     test: /\.(js|jsx)$/,
             //     include: path.resolve(__dirname, 'src'),
