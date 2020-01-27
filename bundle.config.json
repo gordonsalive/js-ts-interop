@@ -1,0 +1,4 @@
+{
+    "readme": "change isProd to false, to bundle for a development environment",
+    "isProd": false
+}
