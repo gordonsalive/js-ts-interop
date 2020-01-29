@@ -1,7 +1,7 @@
 // for this 1 we require object 1 and export export it
-require("./object1.js");
+import './object1.js';
+import { getObjectFromWindow } from './windowUtils';
 
-const windowAsAny = window as any;
-const Object1 = windowAsAny.Obj1;
+const Object1 = getObjectFromWindow('Obj1');
 
 export default Object1;

@@ -33,7 +33,8 @@ module.exports = {
     mode: bundleConfig.isProd ? 'production' : 'development',
 
     // Enable sourcemaps for debugging webpack's output.
-    devtool: bundleConfig.isProd ? '' : 'source-map',
+    // devtool: bundleConfig.isProd ? '' : 'source-map',
+    devtool: 'source-map', // always prodice a source map, even in prod, for our sanity
 
     module: {
         rules: [
@@ -52,7 +53,7 @@ module.exports = {
             //     include: path.resolve(__dirname, 'src'),
             //     exclude: /node_modules/,
             //     use: [
-            //         { loader: 'babel-loader' } 
+            //         { loader: 'babel-loader' }
             //     ]
             // },
             // {
