@@ -10,7 +10,8 @@ const outputPath = path.join(__dirname, './dev');
 
 module.exports = {
     entry: {
-        app: './src/main.js'
+        app: './src/main.js',
+        alt: './src/alt.js' // a second source and so second output, useful for migration, copied from webpack tutorial
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -18,15 +19,17 @@ module.exports = {
             // for this dev app just overwrite index.html in root each time
             filename: path.join(__dirname, './index.html'),
             template: path.join(__dirname, bundleConfig.isProd ? './indexProd.html' : './indexDev.html'),
-            inject: 'body'
+            inject: 'body',
+            chunks: ['app'] // this tells it to only inject app (not alt in this case)
         })
     ],
     output: {
         // resolve end up with a full path - resillient to file moving up/down
         path: path.resolve(__dirname, outputPath),
-        filename: 'main_bundle.js'
+        filename: '[name].bundle.js' // [name] is the name of the specific entry above
     },
-    // mode instructs webpack how to bundle - for minimum size & max efficiency (production), or for more info and easier development (development)
+    // mode instructs webpack how to bundle - for minimum size & max efficiency (production),
+    //   or for more info and easier development (development)
     mode: bundleConfig.isProd ? 'production' : 'development',
 
     // Enable sourcemaps for debugging webpack's output.
@@ -39,7 +42,7 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 exclude: /node_modules/,
                 use: [
-                    /* { loader: 'babel-loader' }, can let ts compiler do all the work for ts files */
+                    /* { loader: 'babel-loader' }, let ts compiler do all the work for ts files */
                     { loader: 'ts-loader' }
                 ]
             },
