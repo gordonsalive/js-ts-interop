@@ -22,4 +22,4 @@ const sayHowdyFunc: () => string = () => {
     return (`objects: ${JSON.stringify(Obj1)} , ${JSON.stringify(Obj2)}`);
 }
 
-export default sayHowdyFunc
+export default sayHowdyFunc;

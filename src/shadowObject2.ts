@@ -8,8 +8,8 @@ const Object2: Object2 = (function createObj2(): Object2 {
     // but better matches how this will actually be used in the reall application.
     const name = "object 2";
     return {
-        name: name
-    }
+        name
+    };
 }());
 
 // this should allow me to temporarily avoid check on interface of window, until we stop putting stuff on window.
