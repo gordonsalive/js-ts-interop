@@ -49,3 +49,4 @@ buildNumber.properties
 
 # mac
 .DS_Store
+package-lock.json
